@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>05add</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="layui-form" action="" style="margin-top: 10px;">
+    <div class="layui-form-item">
+        <label class="layui-form-label">模板名称：</label>
+        <div class="layui-input-block" style="width: 300px;">
+            <input type="text" name="新建模板" required  lay-verify="required" value="新建模板" class="layui-input bg-color">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">模板编号：</label>
+        <div class="layui-input-block" style="width: 300px;">
+            <input type="text" name="模板编号" required  lay-verify="required" value="无" class="layui-input bg-color">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注：</label>
+        <div class="layui-input-block" style="width: 300px;">
+            <input type="text" name="备注" required  lay-verify="required" value="无" class="layui-input bg-color">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">考评类目1：</label>
+        <div class="layui-input-block">
+            <input type="text" name="考评" value="类目1" class="layui-input bg-color"  style="width: 300px;display: inline-block"><button id="btn1" class="btn">+</button>
+        </div>
+        <div class="layui-form-item" style="margin-top: 15px;">
+            <label class="layui-form-label">考评项1：</label>
+            <div class="layui-input-block">
+                <input  style="width: 300px;display: inline-block" type="text" name="考评项" value="问题1" class="layui-input"><button id="btn2" class="btn">+</button>
+            </div>
+        </div>
+        <div id="div2"></div>
+    </div>
+    <div id="div1"></div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">考评建议1：</label>
+        <div class="layui-input-block">
+            <input  style="width: 300px;display: inline-block" type="text" name="考评建议" value="对老师的建议" class="layui-input bg-color"><button id="btn3" class="btn">+</button>
+        </div>
+    </div>
+    <div id="div3"></div>
+    <hr/>
+    <div class="layui-form-item submit">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-bg-blue" id="sub">确定</button>
+            <button type="reset" class="layui-btn layui-bg-orange" id="comit">退出</button>
+        </div>
+    </div>
+</div>
+<script src="../js/layui/layui.js"></script>
+<script>
+    var btn1 = document.querySelector('#btn1');
+    var btn2 = document.querySelector('#btn2');
+    var btn3 = document.querySelector('#btn3');
+
+    function fn1(){
+        var newdiv = document.createElement("div");
+        newdiv.className = 'layui-form-item';
+        var newlabel = document.createElement("label");
+        newlabel.className = 'layui-form-label';
+        newlabel.innerText = '考评类目:';
+        var newdiv1 = document.createElement("div");
+        newdiv1.className = 'layui-input-block';
+        var newinput = document.createElement("input");
+        newinput.className = 'layui-input bg-color';
+        newinput.value = '新增类目';
+        newinput.type = 'text';
+        newinput.style.width = '300px';
+        newinput.style.display = 'inline-block';
+        var newbtn = document.createElement("button");
+        newbtn.className = 'btn';
+        newbtn.innerText = '+';
+        var newbtn1 = document.createElement("button");
+        newbtn1.className = 'btn1';
+        newbtn1.innerText = '-';
+
+        var xnewdiv = document.createElement("div");
+        xnewdiv.style.marginTop='15px';
+        xnewdiv.className = 'layui-form-item';
+        var xnewlabel = document.createElement("label");
+        xnewlabel.className = 'layui-form-label';
+        xnewlabel.innerText = '考评项:';
+        var xnewdiv1 = document.createElement("div");
+        xnewdiv1.className = 'layui-input-block';
+        var xnewinput = document.createElement("input");
+        xnewinput.className = 'layui-input';
+        xnewinput.value = '问题';
+        xnewinput.type = 'text';
+        xnewinput.style.width = '300px';
+        xnewinput.style.display = 'inline-block';
+        var xnewbtn = document.createElement("button");
+        xnewbtn.className = 'btn';
+        xnewbtn.innerText = '+';
+        var xnewbtn1 = document.createElement("button");
+        xnewbtn1.className = 'btn1';
+        xnewbtn1.innerText = '-';
+
+        var d = document.querySelector("#div1");
+        d.appendChild(newdiv);
+        newdiv.insertBefore(xnewdiv,newdiv.children[0]);
+        xnewdiv.insertBefore(xnewdiv1,xnewdiv.children[0]);
+        xnewdiv.insertBefore(xnewlabel,xnewdiv.children[0]);
+        xnewdiv1.insertBefore(xnewbtn,xnewdiv1.children[0]);
+        xnewdiv1.insertBefore(xnewinput,xnewdiv1.children[0]);
+        newdiv.insertBefore(newdiv1,newdiv.children[0]);
+        newdiv.insertBefore(newlabel,newdiv.children[0]);
+        newdiv1.insertBefore(newbtn1,newdiv1.children[0]);
+        newdiv1.insertBefore(newbtn,newdiv1.children[0]);
+        newdiv1.insertBefore(newinput,newdiv1.children[0]);
+
+        function fn(){
+            var mnewdiv = document.createElement("div");
+            mnewdiv.style.marginTop='15px';
+            mnewdiv.className = 'layui-form-item';
+            var mnewlabel = document.createElement("label");
+            mnewlabel.className = 'layui-form-label';
+            mnewlabel.innerText = '考评项:';
+            var mnewdiv1 = document.createElement("div");
+            mnewdiv1.className = 'layui-input-block';
+            var mnewinput = document.createElement("input");
+            mnewinput.className = 'layui-input';
+            mnewinput.value = '问题';
+            mnewinput.type = 'text';
+            mnewinput.style.width = '300px';
+            mnewinput.style.display = 'inline-block';
+            var mnewbtn = document.createElement("button");
+            mnewbtn.className = 'btn';
+            mnewbtn.innerText = '+';
+            var mnewbtn1 = document.createElement("button");
+            mnewbtn1.className = 'btn1';
+            mnewbtn1.innerText = '-';
+
+            xnewdiv.appendChild(mnewdiv);
+            mnewdiv.insertBefore(mnewdiv1,mnewdiv.children[0]);
+            mnewdiv.insertBefore(mnewlabel,mnewdiv.children[0]);
+            mnewdiv1.insertBefore(mnewbtn1,mnewdiv1.children[0]);
+            mnewdiv1.insertBefore(mnewbtn,mnewdiv1.children[0]);
+            mnewdiv1.insertBefore(mnewinput,mnewdiv1.children[0]);
+
+            mnewbtn.onclick = function(){
+                fn();
+            }
+            mnewbtn1.onclick = function(){
+                mnewdiv.remove();
+                mnewdiv1.remove();
+                mnewlabel.remove();
+                mnewbtn1.remove();
+                mnewbtn.remove();
+                mnewinput.remove();
+            }
+        }
+        xnewbtn.onclick = function(){
+            fn();
+        }
+
+        newbtn.onclick = function(){
+            fn1();
+        }
+        newbtn1.onclick = function(){
+            newdiv.remove();
+            newdiv1.remove();
+            newlabel.remove();
+            newbtn1.remove();
+            newbtn.remove();
+            newinput.remove();
+        }
+    }
+    btn1.onclick = function(){
+        fn1();
+    }
+
+    // btn2
+    function fn2(){
+        var xnewdiv = document.createElement("div");
+        xnewdiv.style.marginTop='15px';
+        xnewdiv.className = 'layui-form-item';
+        var xnewlabel = document.createElement("label");
+        xnewlabel.className = 'layui-form-label';
+        xnewlabel.innerText = '考评项:';
+        var xnewdiv1 = document.createElement("div");
+        xnewdiv1.className = 'layui-input-block';
+        var xnewinput = document.createElement("input");
+        xnewinput.className = 'layui-input';
+        xnewinput.value = '问题';
+        xnewinput.type = 'text';
+        xnewinput.style.width = '300px';
+        xnewinput.style.display = 'inline-block';
+        var xnewbtn = document.createElement("button");
+        xnewbtn.className = 'btn';
+        xnewbtn.innerText = '+';
+        var xnewbtn1 = document.createElement("button");
+        xnewbtn1.className = 'btn1';
+        xnewbtn1.innerText = '-';
+
+        var d = document.querySelector("#div2");
+        d.appendChild(xnewdiv);
+        xnewdiv.insertBefore(xnewdiv1,xnewdiv.children[0]);
+        xnewdiv.insertBefore(xnewlabel,xnewdiv.children[0]);
+        xnewdiv1.insertBefore(xnewbtn1,xnewdiv1.children[0]);
+        xnewdiv1.insertBefore(xnewbtn,xnewdiv1.children[0]);
+        xnewdiv1.insertBefore(xnewinput,xnewdiv1.children[0]);
+
+        xnewbtn.onclick = function(){
+            fn2();
+        }
+        xnewbtn1.onclick = function(){
+            xnewdiv.remove();
+            xnewdiv1.remove();
+            xnewlabel.remove();
+            xnewbtn1.remove();
+            xnewbtn.remove();
+    xnewinput.remove();
+    }
+    }
+    btn2.onclick =function(){
+        fn2();
+    }
+
+        // btn3
+    function fn3(){
+        var newdiv = document.createElement("div");
+        newdiv.className = 'layui-form-item';
+        var newlabel = document.createElement("label");
+        newlabel.className = 'layui-form-label';
+        newlabel.innerText = '考评建议:';
+        var newdiv1 = document.createElement("div");
+        newdiv1.className = 'layui-input-block';
+        var newinput = document.createElement("input");
+        newinput.className = 'layui-input bg-color';
+        newinput.value = '新建议';
+        newinput.type = 'text';
+        newinput.style.width = '300px';
+        newinput.style.display = 'inline-block';
+        var newbtn = document.createElement("button");
+        newbtn.className = 'btn';
+        newbtn.innerText = '+';
+        var newbtn1 = document.createElement("button");
+        newbtn1.className = 'btn1';
+        newbtn1.innerText = '-';
+
+        var d = document.querySelector("#div3");
+        d.appendChild(newdiv);
+        newdiv.insertBefore(newdiv1,newdiv.children[0]);
+        newdiv.insertBefore(newlabel,newdiv.children[0]);
+        newdiv1.insertBefore(newbtn1,newdiv1.children[0]);
+        newdiv1.insertBefore(newbtn,newdiv1.children[0]);
+        newdiv1.insertBefore(newinput,newdiv1.children[0]);
+
+        newbtn.onclick = function(){
+            fn3();
+        }
+        newbtn1.onclick = function(){
+            newdiv.remove();
+            newdiv1.remove();
+            newlabel.remove();
+            newbtn1.remove();
+            newbtn.remove();
+            newinput.remove();
+        }
+    }
+    btn3.onclick =function(){
+        fn3();
+    }
+
+        //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+
+    // 确定
+    document.querySelector('#sub').onclick = function(){
+        layui.use( 'layer', function(){
+            var layer = layui.layer;
+            layer.confirm("确定修改吗？", {
+                icon: 0,
+                title: "提示",
+                btn: ["确定", "取消"]
+            }, function() {
+                layer.closeAll();
+                layer.close({
+                    content: '../html/05add.html'
+                })
+            }, function() {
+                layer.closeAll();
+                layer.close({
+                    content: '../html/05add.html'
+                })
+            })
+        });
+    }
+
+    // 取消
+    document.querySelector('#comit').onclick = function(){
+        layui.use( 'layer', function(){
+            var layer = layui.layer;
+            layer.confirm("确定退出？", {
+                icon: 0,
+                title: "提示",
+                btn: ["确定", "取消"]
+            }, function() {
+                layer.closeAll();
+                layer.close({
+                    content: '../html/05add.html'
+                });
+            }, function() {
+                layer.closeAll();
+                layer.close({
+                    content: '../html/05add.html'
+                })
+            })
+        });
+    }
+
+</script>
+</body>
+</html>

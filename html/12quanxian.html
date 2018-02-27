@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>天智教师考评</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<form class="check">
+    <div>
+        <input name="考评管理" type="checkbox" id="check1"><span style="margin-left:5px;font-size: 18px;">考评管理</span><br />
+        <input name="未审查询" style="margin-left: 10px;" class="input1" type="checkbox"><span style="margin-left:5px;color: #666;">未审查询</span><br />
+        <input name="考评列表" style="margin-left: 10px;" class="input1" type="checkbox"><span style="margin-left:5px;color: #666;">考评列表</span><br />
+        <input name="考评模板" style="margin-left: 10px;" class="input1" type="checkbox"><span style="margin-left:5px;color: #666;">考评模板</span><br />
+        <input name="已审查询" style="margin-left: 10px;" class="input1" type="checkbox"><span style="margin-left:5px;color: #666;">已审查询</span><br />
+    </div>
+    <div>
+        <input name="班级管理" type="checkbox" id="check2"><span style="margin-left:5px;font-size: 18px;">班级管理</span><br />
+        <input name="新增班级" style="margin-left: 10px;" class="input2" type="checkbox"><span style="margin-left:5px;color: #666;">新增班级</span><br />
+        <input name="修改班级" style="margin-left: 10px;" class="input2" type="checkbox"><span style="margin-left:5px;color: #666;">修改班级</span><br />
+    </div>
+    <div>
+        <input name="统计分析" type="checkbox" id="check3"><span style="margin-left:5px;font-size: 18px;">统计分析</span><br />
+        <input name="按月统计" style="margin-left: 10px;" class="input3" type="checkbox"><span style="margin-left:5px;color: #666;">按月统计</span><br />
+        <input name="按季统计" style="margin-left: 10px;" class="input3" type="checkbox"><span style="margin-left:5px;color: #666;">按季统计</span><br />
+        <input name="按年统计" style="margin-left: 10px;" class="input3" type="checkbox"><span style="margin-left:5px;color: #666;">按年统计</span><br />
+    </div>
+    <div>
+        <input name="用户管理" type="checkbox" id="check4"><span style="margin-left:5px;font-size: 18px;">用户管理</span><br />
+        <input name="用户列表" style="margin-left: 10px;" class="input4" type="checkbox"><span style="margin-left:5px;color: #666;">用户列表</span><br />
+        <input name="用户权限" style="margin-left: 10px;" class="input4" type="checkbox"><span style="margin-left:5px;color: #666;">用户权限</span><br />
+    </div>
+    <div>
+        <input name="个人中心" type="checkbox" id="check5"><span style="margin-left:5px;font-size: 18px;">个人中心</span><br />
+        <input name="个人信息" style="margin-left: 10px;" class="input5" type="checkbox"><span style="margin-left:5px;color: #666;">个人信息</span><br />
+        <input name="修改密码" style="margin-left: 10px;" class="input5" type="checkbox"><span style="margin-left:5px;color: #666;">修改密码</span><br />
+    </div>
+    <div style="position: absolute;bottom: 0;">
+        <button class="layui-btn layui-bg-blue sousuo" lay-submit lay-filter="formDemo" style="margin-right: 30px;">确认修改</button>
+        <button class="layui-btn sousuo" style="background: none; color: #000;border: 1px #777 solid;" lay-submit lay-filter="del">取消</button>
+    </div>
+</form>
+</body>
+<script src="../js/layui/layui.js"></script>
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    for(let a=1;a<=5;a++){
+        $('#check'+a).change(function(){
+            for(let i=0;i<$('.input'+a).length;i++){
+                console.log($('.input'+a).length);
+                if($('#check'+a).prop('checked')){
+                    $('.input'+a).eq(i).prop('checked',true);
+                    console.log($('.input'+a).eq(i).prop('checked'))
+                }else{
+                    $('.input'+a).eq(i).prop('checked',false);
+                }
+            }
+        })
+        for(let j=0;j<$('.input'+a).length;j++){
+            console.log($('.input'+a).length);
+            $('.input'+a).eq(j).change(function(){
+                if($(this).prop('checked') == false){
+                    $('#check'+a).prop('checked',false);
+                }
+            })
+        }
+    }
+</script>
+</html>

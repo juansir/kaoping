@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>天智教师考评</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="layui-layout-body" style="background: #f4f8fb">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header layui-bg-blue">
+        <div class="layui-logo head" style="color:#fff;"><img src="../img/logo_login.png"/>天智教育</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href=""  style="color:#fff;">苏州天智软件学院中国IT培训专家</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="../img/chrome.png" class="layui-nav-img">
+                    Admin
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="../html/01login.html">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;">考评管理</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/02noex.html">未审查询</a></dd>
+                        <dd><a href="../html/03yesex.html">已审查询</a></dd>
+                        <dd><a href="../html/04kaopinglist.html">考评列表</a></dd>
+                        <dd><a href="../html/05kaopingform.html">考评模板</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">班级管理</a>
+                    <dl class="layui-nav-child dd">
+                        <dd style="background: #000;"><a href="../html/06addclass.html">新增班级</a></dd>
+                        <dd><a href="../html/07changeclass.html">修改班级</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">统计分析</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/08mouth.html">按月统计</a></dd>
+                        <dd><a href="../html/09quarter.html">按季统计</a></dd>
+                        <dd><a href="../html/10year.html">按年统计</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/11userlist.html">用户列表</a></dd>
+                        <dd><a href="../html/12player.html">角色权限</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">个人中心</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/13owninfo.html">个人信息</a></dd>
+                        <dd><a href="../html/14password.html">修改密码</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body" style="margin:20px 0 20px 20px;;">
+        <!-- 内容主体区域 -->
+        <div>
+            <span>
+                <a href="">班级管理</a>
+                <a><cite style="color:#666;">新增班级</cite></a>
+            </span>
+            <div style="background: #fff;min-width: 630px; padding: 15px; min-height: 510px;margin-top:5px;">
+                <blockquote class="layui-elem-quote find">新增班级</blockquote>
+                <hr />
+                <form class="layui-form" action="">
+                    <div class="layui-form-item" style="display: inline-block;">
+                        <label class="layui-form-label" style="text-align: left">班级类型：</label>
+                        <div class="layui-input-block option2">
+                            <select name="班级类型" lay-verify="required">
+                                <option value="">--请选择班级类型--</option>
+                                <option value="0">java</option>
+                                <option value="1">ui</option>
+                                <option value="2">php</option>
+                                <option value="3">C++</option>
+                                <option value="4">other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">班级：</label>
+                        <div class="layui-input-block option2">
+                            <select name="班级" lay-verify="required">
+                                <option value="">--请选择班级--</option>
+                                <option value="0">java</option>
+                                <option value="1">ui</option>
+                                <option value="2">php</option>
+                                <option value="3">C++</option>
+                                <option value="4">other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">IP段：</label>
+                        <div class="layui-input-block option2">
+                            <input type="text" name="IP段" required  lay-verify="required" placeholder="请输入IP段" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block option2">
+                            <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn layui-bg-blue" lay-submit lay-filter="formDemo">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer footer" style="line-height:20px;">
+        <!-- 底部固定区域 -->
+        &copy; 天创集团（中国）2017 版权所有<br/>
+        TianZhi Education Student Feedback Sysytem | 天智教育学院反馈系统 | 2009-2020
+    </div>
+</div>
+<script src="../js/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

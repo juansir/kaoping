@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>天智教师考评</title>
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="layui-layout-body" style="background: #f4f8fb">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header layui-bg-blue">
+        <div class="layui-logo head" style="color:#fff;"><img src="../img/logo_login.png"/>天智教育</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href=""  style="color:#fff;">苏州天智软件学院中国IT培训专家</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="../img/chrome.png" class="layui-nav-img">
+                    Admin
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="../html/01login.html">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;">考评管理</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/02noex.html">未审查询</a></dd>
+                        <dd><a href="../html/03yesex.html">已审查询</a></dd>
+                        <dd><a href="../html/04kaopinglist.html">考评列表</a></dd>
+                        <dd><a href="../html/05kaopingform.html">考评模板</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">班级管理</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/06addclass.html">新增班级</a></dd>
+                        <dd><a href="../html/07changeclass.html">修改班级</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">统计分析</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/08mouth.html">按月统计</a></dd>
+                        <dd><a href="../html/09quarter.html">按季统计</a></dd>
+                        <dd><a href="../html/10year.html">按年统计</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/11userlist.html">用户列表</a></dd>
+                        <dd style="background: #000;"><a href="../html/12player.html">角色权限</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">个人中心</a>
+                    <dl class="layui-nav-child dd">
+                        <dd><a href="../html/13owninfo.html">个人信息</a></dd>
+                        <dd><a href="../html/14password.html">修改密码</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body" style="margin:20px 0 20px 20px;;">
+        <!-- 内容主体区域 -->
+        <div>
+            <span>
+                <a href="">用户管理</a>
+                <a><cite style="color:#666;">角色权限</cite></a>
+            </span>
+            <div style="background: #fff;min-width: 630px; padding: 15px; min-height: 510px;margin-top:5px;">
+                <blockquote class="layui-elem-quote find">找到<span style="font-size: 20px;">7</span>条记录</blockquote>
+                <hr />
+                <table class="layui-table" lay-skin="line">
+                    <tr>
+                        <td style="width: 80px;">
+                            <input type="checkbox" name="" id="check" value=""><span style="margin-left: 5px;">全选</span>
+                        </td>
+                        <td style="width: 120px;">编号</td>
+                        <td>角色名</td>
+                        <td>备注</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 80px;">
+                            <input type="checkbox" name="" class="input" value="">
+                        </td>
+                        <td style="width: 120px;">1</td>
+                        <td>jack</td>
+                        <td></td>
+                        <td>
+                            <a class="power" href="javascript:;">权限设置</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 80px;">
+                            <input type="checkbox" name=""class="input" value="">
+                        </td>
+                        <td style="width: 120px;">2</td>
+                        <td>wate</td>
+                        <td></td>
+                        <td>
+                            <a class="power" href="javascript:;">权限设置</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 80px;">
+                            <input type="checkbox" name="" class="input" value="">
+                        </td>
+                        <td style="width: 120px;">3</td>
+                        <td>henlen</td>
+                        <td></td>
+                        <td>
+                            <a class="power" href="javascript:;">权限设置</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 80px;">
+                            <input type="checkbox" name="" class="input" value="">
+                        </td>
+                        <td style="width: 120px;">4</td>
+                        <td>ben</td>
+                        <td></td>
+                        <td>
+                            <a class="power" href="javascript:;">权限设置</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 80px;">
+                            <input type="checkbox" name="" class="input" value="">
+                        </td>
+                        <td style="width: 120px;">5</td>
+                        <td>nana</td>
+                        <td></td>
+                        <td>
+                            <a class="power" href="javascript:;">权限设置</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 80px;">
+                            <input type="checkbox" name="" class="input" value="">
+                        </td>
+                        <td style="width: 120px;">6</td>
+                        <td>acd</td>
+                        <td></td>
+                        <td>
+                            <a class="power" href="javascript:;">权限设置</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 80px;">
+                            <input type="checkbox" name="" class="input" value="">
+                        </td>
+                        <td style="width: 120px;">1</td>
+                        <td>bob</td>
+                        <td></td>
+                        <td>
+                            <a class="power" href="javascript:;">权限设置</a>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <button class="layui-btn layui-bg-blue add">新增角色</button>
+                    <button class="layui-btn layui-btn-danger">删除已选</button>
+                </div>
+                <div id="test1"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer footer" style="line-height:20px;">
+        <!-- 底部固定区域 -->
+        &copy; 天创集团（中国）2017 版权所有<br/>
+        TianZhi Education Student Feedback Sysytem | 天智教育学院反馈系统 | 2009-2020
+    </div>
+</div>
+<script src="../js/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+
+    var power = document.querySelectorAll('.power')
+    for(let i=0;i<power.length;i++){
+        power[i].onclick = function(){
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.open({
+                    type:2,
+                    title: '用户预览',
+                    shadeClose: true,
+                    shade: 0.8,
+                    offset:['10px'],
+                    area: ['400px', '550px'],
+                    content: '../html/12quanxian.html'
+                });
+            });
+        }
+    }
+
+    // 新增角色
+    document.querySelector('.add').onclick = function(){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+            layer.open({
+                type:2,
+                title: '新增用户',
+                shadeClose: true,
+                shade: 0.8,
+                offset:['auto'],
+                area: ['600px', '300px'],
+                content: '../html/12add.html'
+            });
+        });
+    }
+
+</script>
+</body>
+<script>
+    layui.use(['laypage', 'layer'], function(){
+        var laypage = layui.laypage
+            ,layer = layui.layer;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count:50//数据总数，从服务端得到
+            ,prev: '上一页'
+            ,next: '下一页'
+        });
+    });
+</script>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $('#check').change(function(){
+        for(let i=0;i<$('.input').length;i++){
+            console.log($('.input').length);
+            if($('#check').prop('checked')){
+                $('.input').eq(i).prop('checked',true);
+                console.log($('.input').eq(i).prop('checked'))
+            }else{
+                $('.input').eq(i).prop('checked',false);
+            }
+        }
+    })
+    for(let j=0;j<$('.input').length;j++){
+        console.log($('.input').length);
+        $('.input').eq(j).change(function(){
+            if($(this).prop('checked') == false){
+                $('#check').prop('checked',false);
+            }
+        })
+    }
+</script>
+</html>
